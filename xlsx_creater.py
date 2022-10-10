@@ -3,9 +3,10 @@ from geopy import Nominatim
 
 from db import create_table, create_log, connecting_bd
 from connect_site import connect_site, get_all_data
+import os
 
 # Создаём таблицу
-x_file = xlsxwriter.Workbook(r'result.xlsx')
+x_file = xlsxwriter.Workbook('result.xlsx')
 page = x_file.add_worksheet()
 
 # Добавляем ширину столбцов
@@ -100,6 +101,8 @@ if __name__ == "__main__":
         x_file.close()  # Закрываем таблицу
 
         create_log(db, cursor, city, "Done")  # Запись в БД
+        os.startfile('result.xlsx')
 
-    except:
+    except Exception as exc:
+        print(f'[INFO] - Ошибка: {exc}')
         create_log(db, cursor, city, "Error")  # Запись в БД
