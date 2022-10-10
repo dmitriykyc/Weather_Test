@@ -24,3 +24,10 @@
 2. Заполнить заголовки браузера для подключения к сайту (accept, cookie, user-agent) в файле connect_site.py
 3. Запустить файл xlsx_creater.py для начала выполнения скрипта
 4. Ввести город в консоли
+
+## Стек:
+- Python - 3.10
+- BeautifulSoup4 - 4.11.1
+- geopygeopy - 2.2.0
+- XlsxWriter - 3.0.3
+- SQLite3
