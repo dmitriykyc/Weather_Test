@@ -1,4 +1,5 @@
-lxml
-beautifulsoup4
-geopy
-xlsxwriter
+lxml==4.9.1
+beautifulsoup4==4.11.1
+geopy==2.2.0
+xlsxwriter==3.0.3
+
