@@ -1,5 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
+import browser_cookie3
 
 from services_func import get_day_and_month_date, get_magnetic_field, get_pressure, get_temperature, \
     get_humidity, get_weather_state
@@ -14,14 +15,10 @@ def connect_site(getloc):
     # Формируем ссылку
     url = f'https://yandex.ru/pogoda/details?lat={getloc.latitude}&lon={getloc.longitude}&via=ms'
 
-    # Нужно вставить заголовки для успешного подключения
-    headers = {
-        'accept': '',
-        'cookie': '',
-        'user-agent': ''
-    }
+    # Берём Cookie
+    cj = browser_cookie3.chrome()
 
-    response = requests.get(url=url, headers=headers)  # Создаём запрос
+    response = requests.get(url=url, cookies=cj)  # Создаём запрос
     soup = BeautifulSoup(response.text, features="lxml")
 
     # Собираем class - 'card' через функцию, чтобы отсечь не точное совпадение, т.к. есть рекламные блоки
