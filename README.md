@@ -21,13 +21,14 @@
 
 ## Установка и запуск.
 1. Установить необходимые библиотеки из requirements.txt
-2. Заполнить заголовки браузера для подключения к сайту (accept, cookie, user-agent) в файле connect_site.py
-3. Запустить файл xlsx_creater.py для начала выполнения скрипта
-4. Ввести город в консоли
+2. Запустить файл xlsx_creater.py для начала выполнения скрипта
+3. Ввести город в консоли
 
 ## Стек:
 - Python - 3.10
 - BeautifulSoup4 - 4.11.1
+- requests==2.28.1
+- browser-cookie3==0.16.2
 - geopygeopy - 2.2.0
 - XlsxWriter - 3.0.3
 - SQLite3
